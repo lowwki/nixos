@@ -1,0 +1,31 @@
+{
+  self,
+  inputs,
+  ...
+}: {
+	flake.nixosConfigurations.potato = inputs.nixpkgs.lib.nixosSystem {
+  	    modules = [
+	    	self.nixosModules.potato
+	    ];                                                         # it must be the primary user so he can manage hjem aspect.
+	};
+	
+	flake.nixosModules.potato = { ... }: {              # my pc is literally not more than a potato so name yours with something good.
+		
+		imports = [
+		    ./hardware-configuration.nix                  # imports the hardware-configuration.nix. imports as yours accordingly.
+  		  ./_legacy/_boot.nix
+  		  ./_legacy/_locale.nix                          # refers to readme for details 
+  		]
+  		++ (with self.nixosModules; [ 
+#	    impermanence
+        potato_dri                                         # old cpu drivers              # user
+		ui      
+		core
+
+        primaryuser
+		apps
+    ]);
+  
+     networking.hostName = "potato";
+  };
+}
