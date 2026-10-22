@@ -5,10 +5,9 @@
 }: {
   perSystem = {
     pkgs,
-    self',
     ...
   }: let
-    lf = self'.packages.lf;
+#    lf = self'.packages.lf;
     fishConf =
       pkgs.writeText "fishy-fishy"
       # fish
@@ -50,7 +49,7 @@
       inherit pkgs;
       package = pkgs.fish;
       runtimeInputs = [
-        pkgs.zoxide
+  #      pkgs.zoxide
       ];
       flags = {
         "-C" = "source ${fishConf}";

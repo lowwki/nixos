@@ -12,7 +12,7 @@
     ];
   in {
     devShells = {
-      default = pkgs.mkShell { packages = nixTools ++ phoneTools ++ phoneTools ++ rustTools; };
+      default = pkgs.mkShell { packages = nixTools ++ pythonTools ++ phoneTools ++ rustTools; };
       nixos   = pkgs.mkShell { packages = nixTools; };
       phone   = pkgs.mkShell { packages = phoneTools; };
       python  = pkgs.mkShell { packages = pythonTools; };

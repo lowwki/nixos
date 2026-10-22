@@ -11,14 +11,18 @@
     preservation.url = "github:nix-community/preservation";
 
     quickshell-config = {                                                 # linked to my repo
-    	url = "git+https://codeberg.org/khnmrz/quickshell";     
+    	url = "git+https://codeberg.org/lowwki/quickshell";     
 	    flake = false;
     };
+     nautilus-my-computer = {
+         url = "github:yannmasoch/nautilus-my-computer?dir=packaging/nix";
+         inputs.nixpkgs.follows = "nixpkgs";
+     };
 
-    zen-browser = {
-        url = "github:0xc000022070/zen-browser-flake";
-        inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # zen-browser = {
+    #     url = "github:0xc000022070/zen-browser-flake";
+    #     inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     # otter-launcher = {
     #     url = "github:kuokuo123/otter-launcher";

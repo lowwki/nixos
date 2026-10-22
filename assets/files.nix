@@ -1,8 +1,8 @@
 { ... }:
 {
-   flake.nixosModules.app-file = { pkgs, ... }: {
+   flake.nixosModules.app-files = { pkgs, ... }: {
    	environment.systemPackages = with pkgs; [ 
-        nautilus 
+#        nautilus 
         zathura 
         imv
         vlc
