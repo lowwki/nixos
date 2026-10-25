@@ -22,15 +22,3 @@ in
  };
 }
 
-# {
-#   flake.nixosModules.ly = { ... }: {
-#     services.displayManager.ly = {
-#       enable = true;
-#       settings = {
-#         animation = "matrix";   # or "none", "doom", "colormix"
-#         clock = "%a %d %b  %H:%M";
-#         hide_borders = false;
-#       };
-#     };
-#   };
-# }

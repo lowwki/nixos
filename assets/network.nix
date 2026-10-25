@@ -1,6 +1,5 @@
 { ... }: {
   flake.nixosModules.network-service = { pkgs, ... }: {
-    # ── NetworkManager ────────────────────────────────────────
     networking.wireless.iwd = {
       enable = true;
       settings = {
@@ -9,7 +8,6 @@
       };
    };
 
-    # ── DNS (multi-server failover) ───────────────────────────
     services.resolved = {
       enable = true;
       settings.Resolve = {
@@ -22,6 +20,6 @@
       };
     };
 
-    environment.systemPackages = [ pkgs.impala pkgs.iw ];
+    environment.systemPackages = [ pkgs.proton-vpn pkgs.impala pkgs.iw ];
   };
 }
