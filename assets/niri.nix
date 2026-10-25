@@ -116,7 +116,6 @@ in {
 
     layout = {
        gaps = 4;
-
        focus-ring = {
          width = 1;
          active-color = "#${self.themeNoHash.base0C}";
@@ -127,6 +126,9 @@ in {
     {
        matches = [ { is-focused = true; } ];
        opacity = 1.0;
+       shadow = {
+         on = _: { };
+       };
     }
     {
        matches = [
