@@ -23,13 +23,9 @@
     packages.jujutsu = let
       logCommand = ["log" "--reversed" "--no-pager" "-r" defaultRevset "-n" "20"];
     in
-      (inputs.wrappers.wrapperModules.jujutsu.apply {
+      (inputs.wrappers.wrappers.jujutsu.apply {
         inherit pkgs;
         settings = {
-          user = {
-            name = "Yurii";
-            email = "yurii@goxore.com";
-          };
           aliases = {
             l = logCommand;
           };

@@ -93,7 +93,7 @@ in {
           "Mod+Shift+9".move-column-to-workspace = 9;
           "Mod+Shift+0".move-column-to-workspace = 10;
 
-	      "Mod+Tab".toggle-overview = _: { };
+  	      "Mod+Tab".toggle-overview = _: { };
 
           "XF86AudioRaiseVolume".spawn-sh = "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+";
           "XF86AudioLowerVolume".spawn-sh = "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-";
@@ -109,10 +109,10 @@ in {
           "Mod+Ctrl+WheelScrollUp".focus-workspace-up = _: { };
 
             #[ "${pkgs.lib.getExe' pkgs.wl-clipboard "wl-paste"}" ];
-	      "Print".screenshot = _: { };                  # interactive region select           
-	      "Ctrl+Print".screenshot-screen = _: { };      # whole focused monitor
-	      "Alt+Print".screenshot-window = _: { };       # focused window
-       };
+	        "Print".screenshot = _: { };                  # interactive region select           
+	        "Ctrl+Print".screenshot-screen = _: { };      # whole focused monitor
+	        "Alt+Print".screenshot-window = _: { };       # focused window
+         };
 
     layout = {
        gaps = 4;
@@ -159,7 +159,7 @@ in {
   };
 
   perSystem = {pkgs, ...}: {
-    packages.niri = inputs.wrapper-modules.wrappers.niri.wrap {
+    packages.niri = inputs.wrappers.wrappers.niri.wrap {
       inherit pkgs;
       imports = [self.wrappersModules.niri];
     };

@@ -5,7 +5,7 @@
       package = pkgs.libqalculate;
       flags = {
       };
-      args = [
+      appendFlag = [
         "-s"
         "autocalc"
         "-s"

@@ -12,7 +12,7 @@
     packages.quickshell = inputs.wrappers.lib.wrapPackage {
       inherit pkgs;
       package = pkgs.quickshell;
-      runtimeInputs = [
+      runtimePkgs = [
         pkgs.fd              # file listing
         pkgs.fzf             # fuzzy filter for f mode
         pkgs.file            # mime detection for nvim-vs-xdg-open
@@ -31,7 +31,7 @@
         FONTCONFIG_FILE = "${fontsConf}";
         EMOJI_FILE = "${pkgs.unicode-emoji}/share/unicode/emoji/emoji-test.txt";
         TERMINAL_BIN = lib.getExe self'.packages.terminal;
-        EDITOR_BIN = lib.getExe self'.packages.neovimDynamic;   
+        EDITOR_BIN = lib.getExe self'.packages.helix;   
       };
       flags = {
         "-p" = "${inputs.quickshell-config}";

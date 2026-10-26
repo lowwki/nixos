@@ -13,7 +13,7 @@
       default = "";
     };
     config = {
-      args = lib.mkAfter (lib.optionals (config.shell != "") [config.shell]);
+      appendFlag = lib.mkAfter (lib.optionals (config.shell != "") [config.shell]);
       env.FONTCONFIG_FILE = toString (config.pkgs.makeFontsConf {
         fontDirectories = [ 
             config.pkgs.ibm-plex
@@ -38,23 +38,8 @@
         cursor_trail_color = "#3E5641";
         cursor_trail_decay = "0.2 0.5";
 	
-    	window_padding_width = 12;
-	    confirm_os_window_close = 0;
-
-        map = [
-          "alt+1 goto_tab 1"
-          "alt+2 goto_tab 2"
-          "alt+3 goto_tab 3"
-          "alt+4 goto_tab 4"
-          "alt+5 goto_tab 5"
-          "alt+6 goto_tab 6"
-          "alt+7 goto_tab 7"
-          "alt+8 goto_tab 8"
-          "alt+9 goto_tab 9"
-          "ctrl+shift+w close_tab"
-          "ctrl+t new_tab_with_cwd"
-          "ctrl+shift+t new_tab"
-        ];
+      	window_padding_width = 12;
+	      confirm_os_window_close = 0;
 
         background = self.theme.base00;
         foreground = self.theme.base07;
@@ -85,12 +70,26 @@
 
         symbol_map = "U+E000-U+F8FF,U+F0000-U+FFFFD Symbols Nerd Font Mono";
       };
+      extraConfig = lib.concatMapStringsSep "\n" (m: "map ${m}") [
+        "alt+1 goto_tab 1"
+        "alt+2 goto_tab 2"
+        "alt+3 goto_tab 3"
+        "alt+4 goto_tab 4"
+        "alt+5 goto_tab 5"
+        "alt+6 goto_tab 6"
+        "alt+7 goto_tab 7"
+        "alt+8 goto_tab 8"
+        "alt+9 goto_tab 9"
+        "ctrl+shift+w close_tab"
+        "ctrl+t new_tab_with_cwd"
+        "ctrl+shift+t new_tab"
+      ];
     };
   };
 
   perSystem = {pkgs, ...}: {
     packages.kitty =
-      (inputs.wrappers.wrapperModules.kitty.apply {
+      (inputs.wrappers.wrappers.kitty.apply {
         inherit pkgs;
         imports = [self.wrappersModules.kitty];
       }).wrapper;
