@@ -79,32 +79,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1791966044,
-        "narHash": "sha256-t1hT8UW97rFCWCJO7/pClvu0AhLN5V3uir2M0ic4w/Q=",
+        "lastModified": 1792506237,
+        "narHash": "sha256-Q/8KLB6jNfpaUN1HAedE/u/Et9feE/zYSsutBLKrCFk=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "319e4cebef10cbb636c6ea392137b52ad105336a",
+        "rev": "5adc50831c259f87faeb09ddf930d43597197473",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
         "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
-        "lastModified": 1787498568,
-        "narHash": "sha256-9i/VTdusq/+NM/tz+J1Re+ojkMB8MBf0QshnYfzHz30=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "56c02bc00adcf003215cc4bd996d6efaf4cff188",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -127,11 +111,11 @@
     "quickshell-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1792939212,
-        "narHash": "sha256-p4SfV/P7jVeDjT7TIm3AwZ5DA8BGwmQCVJSSwye1MoI=",
+        "lastModified": 1793025823,
+        "narHash": "sha256-ogPWTuZV+dvpi+bbses2Zn9PVhFePlsHPKRoPQQarO4=",
         "ref": "refs/heads/main",
-        "rev": "971b31a457f2a7a61abbbb943300fc93d215a0e3",
-        "revCount": 4,
+        "rev": "de7a198207017f2df3677a4209676efa0a7f816b",
+        "revCount": 7,
         "type": "git",
         "url": "https://codeberg.org/lowwki/quickshell"
       },
@@ -147,7 +131,6 @@
         "nixpkgs": "nixpkgs",
         "preservation": "preservation",
         "quickshell-config": "quickshell-config",
-        "wrapper-modules": "wrapper-modules",
         "wrappers": "wrappers"
       }
     },
@@ -166,39 +149,21 @@
         "type": "github"
       }
     },
-    "wrapper-modules": {
+    "wrappers": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1792414780,
-        "narHash": "sha256-JdP4Csa9nONRva//83Kq9pEvTws2nYBTaJ3CCZHInf0=",
+        "lastModified": 1792946983,
+        "narHash": "sha256-rJDstXPviP6rXKj6/54/nzn/O87PhDB76saJ6BrHwOY=",
         "owner": "BirdeeHub",
         "repo": "nix-wrapper-modules",
-        "rev": "a47eb4c736e3ff1ca95637d99672a39a7f7bd35c",
+        "rev": "c47afa63f372912adf4e33e1aad551e761484250",
         "type": "github"
       },
       "original": {
         "owner": "BirdeeHub",
         "repo": "nix-wrapper-modules",
-        "type": "github"
-      }
-    },
-    "wrappers": {
-      "inputs": {
-        "nixpkgs": "nixpkgs_3"
-      },
-      "locked": {
-        "lastModified": 1791312500,
-        "narHash": "sha256-Wr358xHHD0XHNzl2V6bzHJRvnrwLpa1/o+AjdYKDs1g=",
-        "owner": "Lassulus",
-        "repo": "wrappers",
-        "rev": "d814b84aa832bb01630439c6b3566652da83a786",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Lassulus",
-        "repo": "wrappers",
         "type": "github"
       }
     }

@@ -26,6 +26,8 @@
         pkgs.procps          # pgrep (clipboard watcher check)
         pkgs.gnugrep         # emoji parsing
         pkgs.coreutils       # sleep etc.
+
+        self'.packages.nightmode
       ];
       env = {
         FONTCONFIG_FILE = "${fontsConf}";

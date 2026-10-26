@@ -1,12 +1,9 @@
 { ... }: {
   flake.nixosModules.network-service = { pkgs, ... }: {
-    networking.wireless.iwd = {
+    networking.networkmanager = {
       enable = true;
-      settings = {
-        General.EnableNetworkConfiguration = true;  # iwd handles DHCP itself
-        Network.NameResolvingService = "systemd";   # uses your resolved setup
-      };
-   };
+      dns = "systemd-resolved";
+    };
 
     services.resolved = {
       enable = true;
@@ -16,10 +13,14 @@
         Domains = [ "~." ];
         DNSOverTLS = "opportunistic";
         DNSSEC = "allow-downgrade";
-        MulticastDNS = "no";   # avahi handles .local
+        MulticastDNS = "no";
       };
     };
 
-    environment.systemPackages = [ pkgs.proton-vpn pkgs.impala pkgs.iw ];
+    environment.systemPackages = with pkgs; [
+      proton-vpn
+      wifitui
+      networkmanager
+    ];
   };
 }
