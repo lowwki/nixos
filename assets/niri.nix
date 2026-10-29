@@ -93,7 +93,7 @@ in {
           "Mod+Shift+9".move-column-to-workspace = 9;
           "Mod+Shift+0".move-column-to-workspace = 10;
 
-  	      "Mod+Tab".toggle-overview = _: { };
+	        "Mod+Tab".toggle-overview = _: { };
 
           "XF86AudioRaiseVolume".spawn-sh = "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%+";
           "XF86AudioLowerVolume".spawn-sh = "wpctl set-volume -l 1.4 @DEFAULT_AUDIO_SINK@ 5%-";
@@ -112,7 +112,7 @@ in {
 	        "Print".screenshot = _: { };                  # interactive region select           
 	        "Ctrl+Print".screenshot-screen = _: { };      # whole focused monitor
 	        "Alt+Print".screenshot-window = _: { };       # focused window
-         };
+        };
 
     layout = {
        gaps = 4;
@@ -120,6 +120,7 @@ in {
          width = 1;
          active-color = "#${self.themeNoHash.base0C}";
         };
+       always-center-single-column = true;
     };
     window-rules = [
        { opacity = 0.85; }
@@ -130,15 +131,15 @@ in {
          on = _: { };
        };
     }
-    {
-       matches = [
-        { app-id = "^org.pulseaudio.pavucontrol$"; }
-        { app-id = "blueman-manager"; }
-      ];
-      open-floating = true;
-      default-column-width = { fixed = 600; };
-      default-window-height = { fixed = 400; };
-    }
+#    {
+#       matches = [
+#        { app-id = "^org.pulseaudio.pavucontrol$"; }
+#        { app-id = "blueman-manager"; }
+#      ];
+#      open-floating = true;
+#      default-column-width = { fixed = 600; };
+#      default-window-height = { fixed = 400; };
+#    }
    ];
     cursor = {
   	  xcursor-theme = "Bibata-Modern-Classic";
